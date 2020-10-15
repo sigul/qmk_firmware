@@ -23,8 +23,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
     IT_Q,		IT_W,		IT_E,		IT_R,  		IT_T,    				IT_Y,   IT_U,    IT_I,    IT_O,    IT_P,    
     IT_A,		IT_S,		IT_D,		IT_F,  		IT_G,    				IT_H,  	IT_J,    IT_K,    IT_L,    IT_SCCL, 
-    MT(MOD_LSFT, IT_Z),	IT_X,		IT_C,		IT_V,  		MS_B,	MT(NUMPAD, IT_SLQS),		IT_APDQ,IT_N,   IT_M,    IT_CMLS, IT_DTMR, MT(MOD_RSFT, KC_ENT),
-    KC_LCTL,		KC_LALT,	KC_LGUI,   	LOWER,	        MT(MOD_LSFT, KC_TAB),	ESCFN,  KC_SPC, RAISE,  KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+    MT(MOD_LSFT, IT_Z),	IT_X,		IT_C,		IT_V,  		MS_B,	IT_SLQS,    IT_APDQ,		IT_N,   IT_M,    IT_CMLS, IT_DTMR, MT(MOD_RSFT, KC_ENT),
+    ESCFN, 		KC_TAB,  	KC_RGUI,	LOWER, 		KC_BSPC, KC_LCTL,   KC_LALT, LT(RAISE, KC_SPC),  KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 ),
 
 [_RAISE] = LAYOUT( /* [> RAISE <] */
@@ -63,7 +63,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     IT_EXLM,	IT_AT,   IT_SHRP, IT_DLR,  IT_PERC,			IT_AMPR,    IT_ASTR, IT_LPRN,    IT_RPRN, KC_BSPC,
     IT_TILDE, 	KC_F1,   KC_F2,   KC_F3,   KC_F4,			S(IT_MINS), IT_EQL,  S(IT_EACC), IT_OACC, IT_AACC,
     IT_CRC, 	KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F5,   _______,	S(IT_UACC), IT_PLMN, IT_LCBR,    IT_RCBR, IT_PIPE,
-    _______,  	_______, _______, _______, _______, _______, _______, 	_______,    KC_MNXT, KC_VOLD,    KC_VOLU, KC_MPLY
+    _______,  	_______, _______, _______, KC_TAB, _______, _______, 	_______,    KC_MNXT, KC_VOLD,    KC_VOLU, KC_MPLY
 ),
 
   [_FN] = LAYOUT( /* [> FUNTION <] */
