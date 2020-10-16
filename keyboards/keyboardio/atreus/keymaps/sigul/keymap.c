@@ -50,7 +50,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_LOWER] = LAYOUT( /* [> LOWER <] */
 /* Lower
  * ,-----------------------------------------------------------------------------------.
- * |  !   |   @  |   #  |   $  |  %   |      |      |   &  |   *  |  (   |  )   |  0   |
+ * |  !   |   @  |   #  |   $  |  %   |      |      |   &  |   *  |  (   |  )   | Bspc |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * |  ~   |  F1  |  F2  |  F3  |  F4  |      |      |   _  |   =  |  é   |  ò   |  à   |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
@@ -60,7 +60,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
 
-    IT_EXLM,	IT_AT,   IT_SHRP, IT_DLR,  IT_PERC,			IT_AMPR,    IT_ASTR, IT_LPRN,    IT_RPRN, KC_0   ,
+    IT_EXLM,	IT_AT,   IT_SHRP, IT_DLR,  IT_PERC,			IT_AMPR,    IT_ASTR, IT_LPRN,    IT_RPRN, KC_BSPC,
     IT_TILDE, 	KC_F1,   KC_F2,   KC_F3,   KC_F4,			S(IT_MINS), IT_EQL,  S(IT_EACC), IT_OACC, IT_AACC,
     IT_CRC, 	KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F5,   _______,	S(IT_UACC), IT_PLMN, IT_LCBR,    IT_RCBR, IT_PIPE,
     _______,  	_______, _______, _______, KC_TAB, _______, _______, 	_______,    KC_MNXT, KC_VOLD,    KC_VOLU, KC_MPLY
