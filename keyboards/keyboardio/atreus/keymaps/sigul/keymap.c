@@ -24,7 +24,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     IT_Q,		IT_W,		IT_E,		IT_R,  		IT_T,    				IT_Y,   IT_U,    IT_I,    IT_O,    IT_P,    
     IT_A,		IT_S,		IT_D,		IT_F,  		IT_G,    				IT_H,  	IT_J,    IT_K,    IT_L,    IT_SCCL, 
     MT(MOD_LSFT, IT_Z),	IT_X,		IT_C,		IT_V,  		MS_B,	IT_SLQS,    IT_APDQ,		IT_N,   IT_M,    IT_CMLS, IT_DTMR, MT(MOD_RSFT, KC_ENT),
-    ESCFN, 		KC_TAB,  	KC_RGUI,	KC_BSPC, 	LOWER, KC_LCTL,   KC_LALT, LT(RAISE, KC_SPC),  KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+    ESCFN, 		MT(MOD_LCTL,KC_TAB),  	MT(MOD_LALT,KC_BSPC),        KC_LGUI,		LOWER, LCTL_T(KC_TAB),   LT(FN,KC_SPC), LT(RAISE, KC_SPC),  KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 ),
 
 [_RAISE] = LAYOUT( /* [> RAISE <] */
@@ -44,7 +44,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     IT_1,     IT_2,    IT_3,	 IT_4,    IT_5,   		    IT_6,    IT_7,    IT_8,    IT_9,    IT_0   ,
     IT_GRAVE, _______, SECRET2, SECRET1, _______, 		    IT_MINS, IT_PLUS, IT_EACC, IT_IACC, IT_UACC,
     KC_CAPS,  _______, SECRET0, SECRET3, SECRET4, _______, _______, _______, _______, IT_LBRC, IT_RBRC, IT_BSLS,
-    _______,  _______, _______, _______, _______, _______, _______, _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END
+    _______,  _______, _______, _______, _______, _______, KC_BSPC, _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END
 ),
 
   [_LOWER] = LAYOUT( /* [> LOWER <] */
@@ -69,20 +69,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_FN] = LAYOUT( /* [> FUNTION <] */
 /* Function
  * ,-----------------------------------------------------------------------------------.
- * |      |      |      |      |      |      |      |      |      |      |      | Del  |
+ * | Tab  |      |      |      |      |      |      |      |      |      |      | Del  |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * |      |      |      |      |      |      |      | left | down |  up  | right|      |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
  * |      |      |      |      |      |      |      |      |      |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      |      |      |      |      |      |      | Next | Vol- | Vol+ | Play |
+ * |      |      | Del  |      |      |      |      |      | Next | Vol- | Vol+ | Play |
  * `-----------------------------------------------------------------------------------'
  */
 
-    _______,  	_______, _______, _______, _______,                     _______, _______, _______, _______, KC_DEL,
+    KC_TAB ,  	_______, _______, _______, _______,                     _______, _______, _______, _______, KC_DEL,
     _______,  	_______, _______, _______, _______,                     KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______,
     _______,  	_______, _______, _______, _______, _______, _______, 	_______, _______, _______, _______, _______,
-    _______,  	_______, _______, _______, _______, _______, _______, 	_______, _______, _______, _______, _______
+    _______,  	_______, KC_DEL , _______, _______, _______, _______, 	_______, _______, _______, _______, _______
 ),
 
   [_NUMPAD] = LAYOUT( /* [> NUMPAD <] */
