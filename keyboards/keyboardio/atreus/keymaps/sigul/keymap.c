@@ -21,10 +21,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |ESCFN | Ctrl | Alt  | GUI  |Lower |Sh/Tab| Space| Raise| Left | Down |  Up  |Right |
  * `-----------------------------------------------------------------------------------'
  */
-    IT_Q,		IT_W,		IT_E,		IT_R,  		IT_T,    				IT_Y,   IT_U,    IT_I,    IT_O,    IT_P,    
-    IT_A,		IT_S,		IT_D,		IT_F,  		IT_G,    				IT_H,  	IT_J,    IT_K,    IT_L,    IT_SCCL, 
-    MT(MOD_LSFT, IT_Z),	IT_X,		IT_C,		IT_V,  		MS_B,	IT_SLQS,    IT_APDQ,		IT_N,   IT_M,    IT_CMLS, IT_DTMR, MT(MOD_RSFT, KC_ENT),
-    ESCFN, 		MT(MOD_LCTL,KC_TAB),  	MT(MOD_LALT,KC_BSPC),        KC_LGUI,		LOWER, LCTL_T(KC_TAB),   LT(FN,KC_SPC), LT(RAISE, KC_SPC),  KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+    IT_Q,			IT_W,			IT_E,		IT_R,  			IT_T,    					            IT_Y,           IT_U,  IT_I,    IT_O,    IT_P,    
+    IT_A,			IT_S,			IT_D,		IT_F,  			IT_G,    						    IT_H,           IT_J,  IT_K,    IT_L,    IT_SCCL, 
+    MT(MOD_LSFT, IT_Z),		IT_X,			IT_C,		IT_V,  			MS_B,			IT_SLQS,        IT_APDQ,    	    IT_N,           IT_M,  IT_CMLS, IT_DTMR, MT(MOD_RSFT, KC_ENT),
+    MT(MOD_LCTL,KC_TAB),	MT(MOD_LALT,KC_DEL ), 	KC_LGUI, 	ESCFN,			LT(LOWER,KC_BSPC), 	LCTL_T(KC_TAB), LT(FN,KC_SPC), 	LT(RAISE, KC_SPC),  KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 ),
 
 [_RAISE] = LAYOUT( /* [> RAISE <] */
