@@ -23,8 +23,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
     IT_Q,			IT_W,			IT_E,		IT_R,  			IT_T,    					            IT_Y,           IT_U,  IT_I,    IT_O,    IT_P,    
     IT_A,			IT_S,			IT_D,		IT_F,  			IT_G,    						    IT_H,           IT_J,  IT_K,    IT_L,    IT_SCCL, 
-    MT(MOD_LSFT, IT_Z),		IT_X,			IT_C,		IT_V,  			MS_B,			IT_SLQS,        IT_APDQ,    	    IT_N,           IT_M,  IT_CMLS, IT_DTMR, MT(MOD_RSFT, KC_ENT),
-    MT(MOD_LCTL,KC_ESC),	MT(MOD_LALT,KC_TAB ), 	KC_LGUI, 	LT(FN,KC_DEL ),		LT(LOWER,KC_BSPC), 	LT(NUMPAD,KC_SPC), LT(FN,KC_SPC), 	LT(RAISE, KC_SPC),  KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+    SFT_T(IT_Z),		IT_X,			IT_C,		IT_V,  			MS_B,			IT_SLQS,        IT_APDQ,    	    IT_N,           IT_M,  IT_CMLS, IT_DTMR, KC_SFTENT,
+    MT(MOD_LCTL,KC_ESC),	MT(MOD_LALT,KC_TAB ), 	KC_LGUI, 	LT(KC_LSFT, KC_DEL),		LT(LOWER,KC_BSPC), 	LT(NUMPAD,KC_SPC), LT(FN,KC_SPC), 	LT(RAISE, KC_SPC),  KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 ),
 
 [_RAISE] = LAYOUT( /* [> RAISE <] */
@@ -121,6 +121,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     _______, _______,    _______, DEBUG,   _______,                    _______, _______, _______, _______, _______,
     _______, _______,    _______, _______, _______, _______, _______, _______, _______,  _______, _______, _______,
     _______, _______,    _______, _______, _______, IT_AT, _______, _______, _______,  _______, _______, _______
-)
+),
 
 };
+
+bool get_ignore_mod_tap_interrupt(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case SFT_T(IT_Z):
+            return true;
+        default:
+            return false;
+    }
+}
