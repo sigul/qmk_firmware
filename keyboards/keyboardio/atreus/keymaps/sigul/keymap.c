@@ -24,7 +24,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     IT_Q,			IT_W,			IT_E,		IT_R,  			IT_T,    					            IT_Y,           IT_U,  IT_I,    IT_O,    IT_P,    
     IT_A,			IT_S,			IT_D,		IT_F,  			IT_G,    						    IT_H,           IT_J,  IT_K,    IT_L,    IT_SCCL, 
     SFT_T(IT_Z),		IT_X,			IT_C,		IT_V,  			MS_B,			IT_SLQS,        IT_APDQ,    	    IT_N,           IT_M,  IT_CMLS, IT_DTMR, KC_SFTENT,
-    MT(MOD_LCTL,KC_ESC),	MT(MOD_LALT,KC_TAB ), 	KC_LGUI, 	LT(MOD_LSFT, KC_DEL),		LT(LOWER,KC_BSPC), 	LT(NUMPAD,KC_SPC), LT(FN,KC_SPC), 	LT(RAISE, KC_SPC),  KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+    MT(MOD_LCTL,KC_ESC),	MT(MOD_LALT,KC_TAB ), 	KC_LGUI, 	MT(MOD_LSFT, KC_DEL),		LT(LOWER,KC_BSPC), 	LT(NUMPAD,KC_SPC), LT(FN,KC_SPC), 	LT(RAISE, KC_SPC),  KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 ),
 
 [_RAISE] = LAYOUT( /* [> RAISE <] */
