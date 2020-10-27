@@ -42,8 +42,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
     IT_1,     IT_2,    IT_3,	 IT_4,    IT_5,   		    IT_6,    IT_7,    IT_8,    IT_9,    IT_0   ,
-    IT_GRAVE, _______, SECRET2, SECRET1, _______, 		    IT_MINS, IT_PLUS, IT_EACC, IT_IACC, IT_UACC,
-    KC_CAPS,  _______, SECRET0, SECRET3, SECRET4, _______, _______, _______, SECRET5, IT_LBRC, IT_RBRC, IT_BSLS,
+    IT_GRAVE, SECRET2, SECRET1, _______, _______, 		    IT_MINS, IT_PLUS, IT_EACC, IT_IACC, IT_UACC,
+    KC_CAPS,  SECRET0, SECRET3, SECRET4, _______, _______, _______, _______, SECRET5, IT_LBRC, IT_RBRC, IT_BSLS,
     _______,  _______, _______, _______, _______, _______, KC_BSPC, _______, KC_HOME, KC_PGDN, KC_PGUP, KC_END
 ),
 
