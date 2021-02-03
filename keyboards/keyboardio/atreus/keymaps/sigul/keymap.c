@@ -8,6 +8,23 @@
 #include "keymap_italian_osx_ansi.h"
 #include "sigul.h"
 
+
+
+// Left-hand home row mods
+#define CTL_A LCTL_T(KC_A)
+#define ALT_S LALT_T(KC_S)
+#define GUI_D LGUI_T(KC_D)
+#define FN_F LT(FN, KC_F)
+#define SP_NAV LT(NAVIGATION, KC_SPC)
+
+// Right-hand home row mods
+//#define CTL_J RCTL_T(KC_J)
+#define CMD_K LGUI_T(KC_K)
+//#define ALT_L LALT_T(KC_L)
+//#define GUI_SCLN RGUI_T(KC_SCLN)
+
+
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QWERTY] = LAYOUT( /* Qwerty */ 
 /* Qwerty
@@ -21,10 +38,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |ESCFN | Ctrl | Alt  | GUI  |Lower |Sh/Tab| Space| Raise| Left | Down |  Up  |Right |
  * `-----------------------------------------------------------------------------------'
  */
-    IT_Q,		IT_W,		IT_E,		IT_R,  			IT_T,    					          IT_Y,              IT_U,    IT_I,    IT_O,    IT_P,    
-    LT(FN,IT_A),	ALT_T(IT_S),	GUI_T(IT_D),	IT_F,  			IT_G,    						  IT_H,              IT_J,    IT_K,    IT_L,    IT_SCCL, 
-    SFT_T(IT_Z),	IT_X,		IT_C,		IT_V,  			MS_B,			IT_SLQS,      	         IT_APDQ, IT_N,     	     IT_M,    IT_CMLS, IT_DTMR, KC_SFTENT,
-    CTL_T(KC_ESC),	ALT_T(KC_TAB), 	KC_LGUI, 	SFT_T(KC_DEL),		LT(LOWER,KC_BSPC), 	LT(NUMPAD,KC_SPC), LT(FN,KC_SPC), LT(RAISE, KC_SPC), KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+    IT_Q,		IT_W,		IT_E,		IT_R,  			IT_T,    					          IT_Y,   IT_U,    IT_I,    IT_O,    IT_P,    
+    CTL_A,  		ALT_S,		GUI_D,		FN_F,	  		IT_G,    						  IT_H,   IT_J,    CMD_K,    IT_L,    IT_SCCL, 
+    SFT_T(IT_Z),	IT_X,		IT_C,		IT_V,  			MS_B,			IT_SLQS,      	         IT_APDQ, IT_N,   IT_M,    IT_CMLS, IT_DTMR, KC_SFTENT,
+    CTL_T(KC_ESC),	ALT_T(KC_TAB), 	KC_LGUI, 	SFT_T(KC_TAB),		LT(LOWER,KC_BSPC), 	LT(NUMPAD,KC_SPC), LT(FN,KC_SPC), SP_NAV, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 ),
 
 [_RAISE] = LAYOUT( /* [> RAISE <] */
@@ -75,14 +92,33 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|------+------+------+------+------+------|
  * |      |      |      |      |      |      |      |      |      |      |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |      | Del  |      |      |      |      |      | Next | Vol- | Vol+ | Play |
+ * |      |      |      |      |      | Del  |      |      | Next | Vol- | Vol+ | Play |
  * `-----------------------------------------------------------------------------------'
  */
 
-    KC_TAB ,  	_______, _______, _______, _______,                     _______, _______, _______, _______, KC_DEL,
+    KC_TAB ,  	_______, _______, _______, _______,                     _______, _______, _______, _______, KC_BSPC,
     _______,  	_______, _______, _______, _______,                     KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______,
     _______,  	_______, _______, _______, _______, _______, _______, 	_______, _______, _______, _______, _______,
-    _______,  	_______, KC_DEL , _______, _______, _______, _______, 	_______, _______, _______, _______, _______
+    _______,  	_______, _______, _______, KC_DEL, _______, _______, 	_______, _______, _______, _______, _______
+),
+
+ [_NAV] = LAYOUT( /* [> NAVIGATION <] */
+/* Function
+ * ,-----------------------------------------------------------------------------------.
+ * | Tab  |      |      |      |      |      |      |      |      |      |      | Del  |
+ * |------+------+------+------+------+-------------+------+------+------+------+------|
+ * | Ctrl | Alt  | Shift| GUI  |      |      |      | left | down |  up  | right|      |
+ * |------+------+------+------+------+------|------+------+------+------+------+------|
+ * |      |      |      |      |      |      |      |      |      |      |      |      |
+ * |------+------+------+------+------+------+------+------+------+------+------+------|
+ * |      |      |      |      |      | Del  |      |      | Next | Vol- | Vol+ | Play |
+ * `-----------------------------------------------------------------------------------'
+ */
+
+    KC_TAB ,  	_______, _______, _______, _______,                     _______, _______, _______, _______, KC_BSPC,
+    KC_LCTL,  	KC_LALT, KC_LSFT, KC_LGUI, _______,                     KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______,
+    _______,  	_______, _______, _______, _______, _______, _______, 	_______, _______, _______, _______, _______,
+    _______,  	_______, _______, _______, KC_DEL, _______, _______, 	_______, _______, _______, _______, _______
 ),
 
   [_NUMPAD] = LAYOUT( /* [> NUMPAD <] */
@@ -127,13 +163,51 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 bool get_ignore_mod_tap_interrupt(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case GUI_T(IT_D):
+        case CTL_T(IT_A):
             return true;
         case ALT_T(IT_S):
+            return true;
+        case GUI_T(IT_D):
+            return true;
+        case LT(FN,IT_F):
             return true;
         case SFT_T(IT_Z):
             return true;
         default:
+            return false;
+    }
+}
+
+bool get_tapping_force_hold(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+       case CTL_T(IT_A):
+            return true;
+       case ALT_T(IT_S):
+            return true;
+       case GUI_T(IT_D):
+            return true;
+       case LT(FN,IT_F):
+            return true;
+       case SFT_T(IT_Z):
+            return true;
+       default:
+            return false;
+    }
+}
+
+bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+       case CTL_T(IT_A):
+            return true;
+       case ALT_T(IT_S):
+            return true;
+       case GUI_T(IT_D):
+            return true;
+       case LT(FN,IT_F):
+            return true;
+       case SFT_T(IT_Z):
+            return true;
+       default:
             return false;
     }
 }
