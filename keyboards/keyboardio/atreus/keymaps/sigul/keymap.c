@@ -15,7 +15,7 @@
 #define ALT_S LALT_T(IT_S)
 #define CMD_D LGUI_T(IT_D)
 #define SFT_F LSFT_T(IT_F)
-#define NAV_G LT(FN, IT_G)
+#define FN_G LT(FN, IT_G)
 
 #define SP_NAV LT(NAVIGATION, KC_SPC)
 
@@ -41,7 +41,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
     IT_Q,		IT_W,		IT_E,		IT_R,  			IT_T,    					          IT_Y,   IT_U,    IT_I,    IT_O,    IT_P,    
-    CTL_A,  		ALT_S,		CMD_D,		SFT_T,  		NAV_G,   						  IT_H,  SFT_J,    CMD_K,  RALT_L,  RCTL_SC, 
+    CTL_A,  		ALT_S,		CMD_D,		SFT_F,  		FN_G,   						  IT_H,  SFT_J,    CMD_K,   ALT_L,   CTL_SC, 
     SFT_T(IT_Z),	IT_X,		IT_C,		IT_V,  			MS_B,			IT_SLQS,      	         IT_APDQ, IT_N,   IT_M,    IT_CMLS, IT_DTMR, KC_SFTENT,
     CTL_T(KC_ESC),	ALT_T(KC_TAB), 	KC_LGUI, 	SFT_T(KC_TAB),		LT(LOWER,KC_BSPC), 	LT(RAISE,KC_SPC),       SP_NAV, MO(RAISE), KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 ),
@@ -118,7 +118,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
     KC_TAB ,  	_______, _______, _______, _______,                     _______, _______, _______, _______, KC_BSPC,
-    KCTL_A, 	  ALT_S,   CMD_D,   SFT_T, NAV_G,                     KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______,
+    CTL_A, 	  ALT_S,   CMD_D,   SFT_F, FN_G,                     KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______,
     _______,  	_______, _______, _______, _______, _______, _______, 	_______, _______, _______, _______, _______,
     _______,  	_______, _______, _______, KC_DEL, _______, _______, 	_______, _______, _______, _______, _______
 ),
@@ -165,51 +165,81 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 bool get_ignore_mod_tap_interrupt(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-        case CTL_T(IT_A):
-            return true;
-        case ALT_T(IT_S):
-            return true;
-        case GUI_T(IT_D):
-            return true;
-        case LT(FN,IT_F):
-            return true;
-        case SFT_T(IT_Z):
-            return true;
-        default:
+ case CTL_A:
+return true;
+case ALT_S:
+return true;
+case CMD_D:
+return true;
+case SFT_F:
+return true;
+case FN_G:
+return true;
+case SP_NAV :
+return true;
+case CTL_SC:
+return true;
+case ALT_L:
+return true;
+case CMD_K :
+return true;
+case SFT_J :
+return true;
+       default:
             return false;
     }
 }
 
 bool get_tapping_force_hold(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-       case CTL_T(IT_A):
-            return true;
-       case ALT_T(IT_S):
-            return true;
-       case GUI_T(IT_D):
-            return true;
-       case LT(FN,IT_F):
-            return true;
-       case SFT_T(IT_Z):
-            return true;
-       default:
+case CTL_A:
+return true;
+case ALT_S:
+return true;
+case CMD_D:
+return true;
+case SFT_F:
+return true;
+case FN_G:
+return true;
+case SP_NAV :
+return true;
+case CTL_SC:
+return true;
+case ALT_L:
+return true;
+case CMD_K :
+return true;
+case SFT_J :
+return true;
+      default:
             return false;
     }
 }
 
 bool get_permissive_hold(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
-       case CTL_T(IT_A):
-            return true;
-       case ALT_T(IT_S):
-            return true;
-       case GUI_T(IT_D):
-            return true;
-       case LT(FN,IT_F):
-            return true;
-       case SFT_T(IT_Z):
-            return true;
-       default:
+case CTL_A:
+return true;
+case ALT_S:
+return true;
+case CMD_D:
+return true;
+case SFT_F:
+return true;
+case FN_G:
+return true;
+case SP_NAV :
+return true;
+case CTL_SC:
+return true;
+case ALT_L:
+return true;
+case CMD_K :
+return true;
+case SFT_J :
+return true;       
+      default:
             return false;
     }
 }
