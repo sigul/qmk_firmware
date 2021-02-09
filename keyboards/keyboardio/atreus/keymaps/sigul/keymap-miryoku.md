@@ -8,6 +8,7 @@
 #include "keymap_italian_osx_ansi.h"
 #include "sigul.h"
 
+#include "manna-harbour_miryoku.h"
 
 
 // Left-hand home row mods
@@ -26,6 +27,42 @@
 #define SFT_J RSFT_T(IT_J)
 
 
+const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+#if defined MIRYOKU_ALPHAS_QWERTY
+  [BASE] = LAYOUT_miryoku(
+    IT_Q,              IT_W,              IT_E,              IT_R,              IT_T,              IT_Y,              IT_U,              IT_I,              IT_O,              IT_P,
+    LGUI_T(IT_A),      LALT_T(IT_S),      LCTL_T(IT_D),      LSFT_T(IT_F),      IT_G,              IT_H,              LSFT_T(IT_J),      LCTL_T(IT_K),      LALT_T(IT_L),      LGUI_T(IT_SCCL),
+    IT_Z,              ALGR_T(IT_X),      IT_C,              IT_V,              IT_B,              IT_N,              IT_M,              IT_CMLS,           ALGR_T(IT_DTMR),   IT_SLQS,
+    IT_NP,             IT_NP,             LT(MEDR, KC_ESC),  LT(NAVR, KC_SPC),  LT(MOUR, KC_TAB),  LT(NSSL, KC_ENT),  LT(NSL, KC_BSPC),  LT(FUNL, KC_DEL),  KC_NP,             KC_NP
+  ),
+
+ [NAVR] = LAYOUT_miryoku(
+    KC_RST,  KC_NA,   KC_NA,   KC_NA,   KC_NA,   KC_AGIN, KC_UNDO, KC_CUT,  KC_COPY, KC_PSTE,
+    KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, KC_NA,   KC_CAPS, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,
+    KC_NA,   KC_ALGR, KC_NA,   KC_NA,   KC_NA,   KC_INS,  KC_HOME, KC_PGDN, KC_PGUP, KC_END,
+    KC_NP,   KC_NP,   KC_NA,   KC_NA,   KC_NA,   KC_ENT,  KC_BSPC, KC_DEL,  KC_NP,   KC_NP
+  ),
+  [MOUR] = LAYOUT_miryoku(
+    KC_RST,  KC_NA,   KC_NA,   KC_NA,   KC_NA,   KC_NU,   KC_NU,   KC_NU,   KC_NU,   KC_NU,
+    KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, KC_NA,   KC_NU,   KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R,
+    KC_NA,   KC_ALGR, KC_NA,   KC_NA,   KC_NA,   KC_NU,   KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R,
+    KC_NP,   KC_NP,   KC_NA,   KC_NA,   KC_NA,   KC_BTN1, KC_BTN3, KC_BTN2, KC_NP,   KC_NP
+  ),
+  [MBO] = LAYOUT_miryoku(
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+    KC_NP,   KC_NP,   KC_TRNS, KC_TRNS, KC_TRNS, KC_BTN1, KC_BTN3, KC_BTN2, KC_NP,   KC_NP
+  ),
+  [MEDR] = LAYOUT_miryoku(
+    KC_RST,  KC_NA,   KC_NA,   KC_NA,   KC_NA,   KC_TOG,  KC_MOD,  KC_HUI,  KC_SAI,  KC_VAI,
+    KC_LGUI, KC_LALT, KC_LCTL, KC_LSFT, KC_NA,   KC_NU,   KC_MPRV, KC_VOLD, KC_VOLU, KC_MNXT,
+    KC_NA,   KC_ALGR, KC_NA,   KC_NA,   KC_NA,   KC_NU,   KC_NU,   KC_NU,   KC_NU,   KC_NU,
+    KC_NP,   KC_NP,   KC_NA,   KC_NA,   KC_NA,   KC_MSTP, KC_MPLY, KC_MUTE, KC_NP,   KC_NP
+  ),
+  [FUNL] = LAYOUT_miryoku(
+    KC_F12,  KC_F7,   KC_F8,   KC_F9,   KC_PSCR, KC_NA,   KC_NA,   KC_NA,   KC_NA,   KC_RST,
+    KC_F11,  KC_F4,   KC_F5,   KC_F6,   KC_SLCK, KC_NA,   KC_LSFT, KC_LCTL, KC_LALT, KC_LGUI,
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QWERTY] = LAYOUT( /* Qwerty */ 
@@ -35,7 +72,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * |   A  |   S  |  D  |   F   |   G  |      |      |   H  |   J  |   K  |   L  |  ;:  |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
- * |Shft/Z|   X  |  C   |  V   | MS/B |  /?  |  '"  |   N  |   M  |  ,<  |  .>  |S/Ent |
+
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * |ESCFN | Ctrl | Alt  | GUI  |Lower |Sh/Tab| Space| Raise| Left | Down |  Up  |Right |
  * `-----------------------------------------------------------------------------------'
