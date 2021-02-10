@@ -28,7 +28,6 @@
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-#if defined MIRYOKU_ALPHAS_QWERTY
   [BASE] = LAYOUT_miryoku(
     IT_Q,              IT_W,              IT_E,              IT_R,              IT_T,              IT_Y,              IT_U,              IT_I,              IT_O,              IT_P,
     LGUI_T(IT_A),      LALT_T(IT_S),      LCTL_T(IT_D),      LSFT_T(IT_F),      IT_G,              IT_H,              LSFT_T(IT_J),      LCTL_T(IT_K),      LALT_T(IT_L),      LGUI_T(IT_SCCL),
