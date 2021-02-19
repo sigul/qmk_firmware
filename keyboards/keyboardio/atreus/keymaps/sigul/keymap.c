@@ -14,8 +14,8 @@
 #define CTL_A LCTL_T(IT_A)
 #define ALT_S LALT_T(IT_S)
 #define CMD_D LGUI_T(IT_D)
-#define SFT_F LSFT_T(IT_F)
-#define FN_G LT(FN, IT_G)
+#define FN_F LT(FN, IT_F)
+#define SFT_G LSFT_T(IT_G)
 
 #define SP_NAV LT(NAVIGATION, KC_SPC)
 
@@ -24,8 +24,6 @@
 #define ALT_L RALT_T(IT_L)
 #define CMD_K RGUI_T(IT_K)
 #define SFT_J RSFT_T(IT_J)
-
-
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_QWERTY] = LAYOUT( /* Qwerty */ 
@@ -41,7 +39,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
     IT_Q,		IT_W,		IT_E,		IT_R,  			IT_T,    					          IT_Y,   IT_U,    IT_I,    IT_O,    IT_P,    
-    CTL_A,  		ALT_S,		CMD_D,		SFT_F,  		FN_G,   						  IT_H,  SFT_J,    CMD_K,   ALT_L,   IT_SCCL,
+    CTL_A,  		ALT_S,		CMD_D,		FN_F,  		SFT_G,  						  IT_H,  SFT_J,    CMD_K,   ALT_L,   IT_SCCL,
     SFT_T(IT_Z),	IT_X,		IT_C,		IT_V,  			MS_B,			IT_SLQS,      	         IT_APDQ, IT_N,   IT_M,    IT_CMLS, IT_DTMR, KC_SFTENT,
     CTL_T(KC_ESC),	ALT_T(KC_TAB), 	KC_LGUI, 	SFT_T(KC_ESC),		LT(LOWER,KC_SPC ), 	LT(FN   ,KC_TAB),       SP_NAV, LT(RAISE,KC_BSPC), KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 ),
@@ -74,7 +72,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |  ~   |  F1  |  F2  |  F3  |  F4  |      |      |   _  |   =  |  é   |  ò   |  à   |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
  * |  ^   |  F6  |  F7  |  F8  |  F9  |  F5  |      |   §  |   ±  |  {   |  }   |  |   |
- * |------+------+------+------+------+------+------+------+------+------+------+------|
+
  * |      |      |      |      |      |      |      |      |      |      |      |      |
  * `-----------------------------------------------------------------------------------'
  */
@@ -100,12 +98,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     KC_TAB ,  	_______, _______, _______, _______,                     _______, _______, _______, _______, KC_BSPC,
     _______,  	_______, _______, _______, _______,                     _______, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT,
-    _______,  	_______, _______, _______, _______, _______, _______, 	_______, _______, _______, _______, _______,
-    _______,  	_______, _______, _______, KC_DEL, _______, _______, 	_______, _______, _______, _______, _______
+    _______,  	_______, _______, _______, _______, _______, _______, 	_______, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R,
+    _______,  	_______, _______, _______, KC_DEL, _______, _______, 	KC_DEL , KC_BTN1, KC_BTN3, KC_BTN2,_______
 ),
 
  [_NAV] = LAYOUT( /* [> NAVIGATION <] */
-/* Function
+/* Navigation
  * ,-----------------------------------------------------------------------------------.
  * | Tab  |      |      |      |      |      |      |      |      |      |      | Del  |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
@@ -118,7 +116,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
     KC_TAB ,  	_______, _______, _______, _______,                     _______, _______, _______, _______, KC_BSPC,
-    CTL_A, 	  ALT_S,   CMD_D,   SFT_F, FN_G,                     KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______,
+    CTL_A, 	  ALT_S,   CMD_D,   FN_F, FN_F,                     KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______,
     _______,  	_______, _______, _______, _______, _______, _______, 	_______, _______, _______, _______, _______,
     _______,  	_______, _______, _______, KC_DEL, _______, _______, 	_______, _______, _______, _______, _______
 ),
@@ -171,9 +169,9 @@ case ALT_S:
 return true;
 case CMD_D:
 return true;
-case SFT_F:
+case SFT_G:
 return true;
-case FN_G:
+case FN_F:
 return true;
 case SP_NAV :
 return true;
@@ -200,9 +198,9 @@ case ALT_S:
 return true;
 case CMD_D:
 return true;
-case SFT_F:
+case FN_F:
 return true;
-case FN_G:
+case SFT_G:
 return true;
 case SP_NAV :
 return true;
@@ -229,9 +227,9 @@ case ALT_S:
 return true;
 case CMD_D:
 return true;
-case SFT_F:
+case FN_F:
 return true;
-case FN_G:
+case SFT_G:
 return true;
 case SP_NAV :
 return true;
