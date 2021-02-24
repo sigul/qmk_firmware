@@ -90,8 +90,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     U_NP,    U_NP,    U_NA,    U_NA,    U_NA,    KC_ENT,  KC_BSPC, KC_DEL,  U_NP,    U_NP
   ),
   [MOUR] = LAYOUT_miryoku(
-    RESET,   U_NA,    U_NA,    U_NA,    U_NA,    IT_AACC, IT_EACC, IT_IACC, IT_OACC, IT_UACC,
-    KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, U_NA,    S(IT_EACC), KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R,
+    RESET,   U_NA,    U_NA,    U_NA,    U_NA,    S(IT_EACC), IT_UACC, IT_IACC, IT_OACC, IT_AACC,
+    KC_LCTL, KC_LALT, KC_LGUI, KC_LSFT, U_NA,    IT_EACC, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R,
     U_NA,    KC_ALGR, U_NA,    U_NA,    U_NA,    U_NU,    KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R,
     U_NP,    U_NP,    U_NA,    U_NA,    U_NA,    KC_BTN1, KC_BTN3, KC_BTN2, U_NP,    U_NP
   ),
