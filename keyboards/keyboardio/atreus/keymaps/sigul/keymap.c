@@ -41,7 +41,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     IT_Q,		IT_W,		IT_E,		IT_R,  			IT_T,    					          IT_Y,   IT_U,    IT_I,    IT_O,    IT_P,    
     CTL_A,  		ALT_S,		CMD_D,		SFT_F, 		 FN_G,  						  IT_H,  SFT_J,    CMD_K,   ALT_L,   IT_SCCL,
     SFT_T(IT_Z),	IT_X,		IT_C,		IT_V,  			MS_B,			IT_SLQS,      	         IT_APDQ, IT_N,   IT_M,    IT_CMLS, IT_DTMR, KC_SFTENT,
-    CTL_T(KC_ESC),	ALT_T(KC_TAB), 	KC_LGUI, 	SFT_T(KC_ESC),		LT(LOWER,KC_SPC ), 	LT(FN   ,KC_TAB),       KC_SPC, LT(RAISE,KC_BSPC), KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
+    CTL_T(KC_ESC),	ALT_T(KC_TAB), 	KC_LGUI, 	SFT_T(KC_ESC),		LT(FN   ,KC_BSPC), 	LT(LOWER,KC_TAB),       KC_SPC, LT(RAISE,KC_ENT ), KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT
 ),
 
 [_RAISE] = LAYOUT( /* [> RAISE <] */
@@ -117,7 +117,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     KC_TAB ,  	_______, _______, _______, _______,                     _______, _______, _______, _______, KC_BSPC,
     CTL_A, 	  ALT_S,   CMD_D,  SFT_F, FN_G,                     KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______,
-    _______,  	_______, _______, _______, _______, _______, _______, 	_______, _______, _______, _______, _______,
+    G(IT_Z),  	G(IT_X), G(IT_V), G(IT_C), _______,_______, _______, 	_______, _______, _______, _______, _______,
     _______,  	_______, _______, _______, KC_DEL, _______, _______, 	_______, _______, _______, _______, _______
 ),
 
