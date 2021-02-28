@@ -17,19 +17,22 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 #include QMK_KEYBOARD_H
+#include "keymap_italian_osx_ansi.h"
+#include "sigul.h"
 
-enum layers
 
-QWERTY,
+enum layers_names {
+
 MEDR,
 NAVR,
 MOUR,
 NSSL,
 NSL,
 FUNL
+};
 
 // Layers
-#define QWERTY 0
+#define BASE   0
 #define MEDR   1
 #define NAVR   2
 #define MOUR   3
@@ -37,6 +40,13 @@ FUNL
 #define NSL    5
 #define FUNL   6
 #define MBO    7
+// additional keys
+#define U_RDO SCMD(KC_Z)
+#define U_PST LCMD(KC_V)
+#define U_CPY LCMD(KC_C)
+#define U_CUT LCMD(KC_X)
+#define U_UND LCMD(KC_Z)
+#define S_ENT MT(MOD_RSFT, KC_ENT)
 
 // custom keycodes for thumbs
 
@@ -47,9 +57,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       KC_LCTL,LGUI_T(IT_A),LALT_T(IT_S), LCTL_T(IT_D),LSFT_T(IT_F),IT_G,        IT_H,    LSFT_T(IT_J), LCTL_T(IT_K), LALT_T(IT_L), LGUI_T(IT_QUOT),IT_APDQ,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-       KC_SFT,    KC_Z, ALGR_T(IT_X),IT_C,   IT_V,    IT_B,                     IT_N,   IT_M,      IT_CMLS, IT_DTMR, IT_SLQS, KC_STENT,
+       KC_LSFT,    KC_Z, ALGR_T(IT_X),IT_C,   IT_V,    IT_B,                     IT_N,   IT_M,      IT_CMLS, IT_DTMR, IT_SLQS, S_ENT,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-              LT(MEDR, KC_ESC),  LT(NAVR, KC_SPC),  LT(MOUR, KC_TAB),  LT(NSSL, KC_ENT),  LT(NSL, KC_BSPC),  LT(FUNL, KC_DEL)
+              LT(MEDR, KC_ESC),  LT(NAVR, KC_ENT),  LT(MOUR, KC_TAB),  LT(NSSL, KC_SPC),  LT(NSL, KC_BSPC),  LT(FUNL, KC_DEL)
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -61,7 +71,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
-                                          XXXXXXX,XXXXXXX, XXXXXX,      KC_MSTP, KC_MPLY, KC_MUTE
+                                          XXXXXXX, XXXXXXX, XXXXXXX,      KC_MSTP, KC_MPLY, KC_MUTE
                                       //`--------------------------'  `--------------------------'
   ),
 
@@ -142,7 +152,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
 
-};
 
 #ifdef OLED_DRIVER_ENABLE
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
@@ -240,7 +249,7 @@ void oled_task_user(void) {
     }
 }
 
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+bool process_record_user_oled(uint16_t keycode, keyrecord_t *record) {
   if (record->event.pressed) {
     set_keylog(keycode, record);
   }
