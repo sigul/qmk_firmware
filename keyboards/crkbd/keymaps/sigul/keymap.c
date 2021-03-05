@@ -28,7 +28,8 @@ NAVR,
 MOUR,
 NSSL,
 NSL,
-FUNL
+FUNL,
+MBO
 };
 
 // Layers
@@ -55,7 +56,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,-----------------------------------------------------.                    ,-----------------------------------------------------.
        KC_TAB,    IT_Q,    IT_W,    IT_E,    IT_R,     IT_T,                        IT_Y,    IT_U,    IT_I,    IT_O,    IT_P, KC_BSPC,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
-      KC_LCTL,LGUI_T(IT_A),LALT_T(IT_S), LCTL_T(IT_D),LSFT_T(IT_F),IT_G,        IT_H,    LSFT_T(IT_J), LCTL_T(IT_K), LALT_T(IT_L), LGUI_T(IT_QUOT),IT_APDQ,
+      KC_LCTL,LCTL_T(IT_A),LALT_T(IT_S), LGUI_T(IT_D),LSFT_T(IT_F),IT_G,        IT_H,    LSFT_T(IT_J), LGUI_T(IT_K), LALT_T(IT_L), IT_SCCL,IT_APDQ,
   //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
        KC_LSFT,    KC_Z, ALGR_T(IT_X),IT_C,   IT_V,    IT_B,                     IT_N,   IT_M,      IT_CMLS, IT_DTMR, IT_SLQS, S_ENT,
   //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
