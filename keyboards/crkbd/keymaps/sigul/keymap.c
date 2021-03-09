@@ -55,26 +55,33 @@ FUNL
 #define SYM_SPC LT(NSSL, KC_SPC)
 #define NUM_BSP LT(NSL, KC_BSPC)
 #define FN_ENT LT(FUNL, KC_ENT)
+#define FN_G   LT(FUNL, IT_G  )
 #define UNDO LCMD(IT_Z)
 #define REDO LCMD(S(IT_Z))
 #define CUT LCMD(IT_X)
 #define COPY LCMD(IT_C)
 #define PASTE LCMD(IT_V)
+#define QUIT LCMD(IT_Q)
+#define CLOSE LCMD(IT_W)
+#define TAB LCMD(IT_T)
+#define SEL_ALL LCMD(IT_A)
+#define SEARCH  LCMD(IT_F)
+#define NEXT LCMD(IT_G)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 
 [BASE] = LAYOUT_split_3x6_3(
  	KC_TAB,		IT_Q,		IT_W,		IT_E,		IT_R,		IT_T,						IT_Y,		IT_U,		IT_I,		IT_O,		IT_P,		KC_BSPC,
- 	KC_ESC,		CTL_A,		ALT_S,		CMD_D,		SFT_F,		IT_G,						IT_H,		SFT_J,		CMD_K,		ALT_L,		IT_APDQ,	IT_SCCL, 
+ 	KC_ESC,		CTL_A,		ALT_S,		CMD_D,		SFT_F,		FN_G,						IT_H,		SFT_J,		CMD_K,		ALT_L,		IT_APDQ,	IT_SCCL, 
  	KC_LSFT,	IT_Z,		ALG_X,		IT_C,		IT_V,		IT_B,						IT_N,		IT_M,		IT_CMLS,	IT_DTMR,	FN_ENT,		FN_ENT, 
  									MED_ESC,	NAV_ENT,	MOU_TAB,	SYM_SPC,	NUM_BSP,	IT_SLQS	
   ),
 
 [NAVR] = LAYOUT_split_3x6_3(
-	_______, 	RESET,		_______,	_______,	_______,	_______,					REDO,		PASTE,		COPY,		CUT,		UNDO,		_______,
-	_______,	_______,	_______,	_______,	_______,	_______,					KC_CAPS,	KC_LEFT,	KC_DOWN,	KC_UP,		KC_RGHT,	_______,
-	_______,	UNDO,		CUT,		COPY,		PASTE,		REDO,						_______,,	KC_HOME,	KC_PGDN,	KC_PGUP,	KC_END,		_______,
+	_______,	QUIT   , 	CLOSE,		_______,	_______,	TAB,						REDO,		PASTE,		COPY,		CUT,		UNDO,		_______,
+	_______,	SEL_ALL,	_______,	_______,	_______,	_______,					KC_CAPS,	KC_LEFT,	KC_DOWN,	KC_UP,		KC_RGHT,	_______,
+	_______,	UNDO,		CUT,		COPY,		PASTE,		REDO,						_______, 	KC_HOME,	KC_PGDN,	KC_PGUP,	KC_END,		_______,
 									_______,	_______,	_______, 	IT_COLN,	KC_DEL,		IT_SCCL
  ),
 
@@ -110,7 +117,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     	_______,	KC_F1,   	KC_F2,   	KC_F3, 		KC_F4,   	KC_F5,						KC_F6,		KC_F7,   	KC_F8,   	KC_F9,  	KC_F10,		_______,
 	_______,	_______,	_______,	_______,	_______,	_______,					_______,	_______,	_______,	_______,	_______,	_______,
 	_______,	_______,	_______,	_______,	_______,	_______,					_______,	_______,	_______,	_______,	_______,	_______,
-									_______,	_______,	_______,	_______,	_______,	_______			
+									_______,	_______,	KC_BSPC,	_______,	_______,	_______			
   )
 
 };
