@@ -41,7 +41,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     IT_Q,		IT_W,		IT_E,		IT_R,  			IT_T,    					          IT_Y,   IT_U,    IT_I,    IT_O,    IT_P,    
     CTL_A,  		ALT_S,		CMD_D,		SFT_F, 		 FN_G,  						  IT_H,  SFT_J,    CMD_K,   ALT_L,   IT_APDQ, 
     SFT_T(IT_Z),	IT_X,		IT_C,		IT_V,  			MS_B,			IT_SLQS,IT_SCCL,      	         IT_N,   IT_M,    IT_CMLS, IT_DTMR, IT_SLQS,
-    CTL_T(KC_ESC),	ALT_T(KC_TAB), 	KC_LGUI, 	SFT_T(KC_ESC),		LT(FN   ,KC_ENT), 	LT(LOWER,KC_TAB),       KC_SPC, LT(RAISE,KC_BSPC ), IT_SCCL, KC_DOWN, KC_UP,   KC_RGHT
+    CTL_T(KC_ESC),	ALT_T(KC_TAB), 	KC_LGUI, 	SFT_T(KC_ESC),		LT(FN   ,KC_ENT), 	LT(LOWER,KC_TAB),       LT(LOWER,KC_SPC), LT(RAISE,KC_BSPC ), IT_SCCL, KC_DOWN, KC_UP,   KC_RGHT
 ),
 
 [_RAISE] = LAYOUT( /* [> RAISE <] */
