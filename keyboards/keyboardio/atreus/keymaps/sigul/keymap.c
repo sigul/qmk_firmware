@@ -8,6 +8,25 @@
 #include "keymap_italian_osx_ansi.h"
 #include "sigul.h"
 
+enum layers_names {
+BASE,
+NAVR,
+MOUR,
+MEDR,
+NSL,
+NSSL,
+FUNL
+};
+
+// Layers
+#define BASE   0
+#define NAVR   1
+#define MOUR   2
+#define MEDR   3
+#define NSL    4
+#define NSSL   5
+#define FUNL   6
+
 
 #define ALT_S LALT_T(IT_S)
 #define CMD_D LGUI_T(IT_D)
