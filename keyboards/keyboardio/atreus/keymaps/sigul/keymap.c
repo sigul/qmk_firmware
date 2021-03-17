@@ -46,6 +46,7 @@ FUNL
 #define CUT LCMD(IT_X)
 #define COPY LCMD(IT_C)
 #define PASTE LCMD(IT_V)
+#define CMD_SPC LCMD(KC_SPC)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [BASE] = LAYOUT(
@@ -59,7 +60,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	_______,	_______,	_______,	_______,	_______,					REDO,		PASTE,		COPY,		CUT,		UNDO,
 	_______,	_______,	_______,	_______,	_______,					KC_CAPS,	KC_LEFT,	KC_DOWN,	KC_UP,		KC_RGHT,
 	UNDO,		CUT,		COPY,		PASTE,		REDO,		_______,	_______,	_______,	KC_HOME,	KC_PGDN,	KC_PGUP,	KC_END,
-	_______,	_______,	_______,	_______,	_______,	_______,	IT_COLN,	KC_DEL,		_______,	_______,	_______,	_______	
+	_______,	_______,	_______,	_______,	_______,	_______,	CMD_SPC,	KC_DEL,		_______,	_______,	_______,	_______	
  ),
 
 [MOUR] = LAYOUT(
