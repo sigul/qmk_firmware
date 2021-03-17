@@ -66,9 +66,9 @@ FUNL
 #define NEWTAB LCMD(IT_T)
 #define SEL_ALL LCMD(IT_A)
 #define RELOAD LCMD(IT_R)
+#define CMD_SPC LCMD(KC_SPC)
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-
 
 [BASE] = LAYOUT_split_3x6_3(
  	KC_TAB,		IT_Q,		IT_W,		IT_E,		IT_R,		IT_T,						IT_Y,		IT_U,		IT_I,		IT_O,		IT_P,		KC_BSPC,
@@ -81,7 +81,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	_______,	QUIT   , 	CLOSE,		KC_DEL ,	RELOAD ,	NEWTAB,				REDO,		PASTE,		COPY,		CUT,		UNDO,		_______,
 	_______,	SEL_ALL,	_______,	_______,	_______,	KC_SPC ,					KC_CAPS,	KC_LEFT,	KC_DOWN,	KC_UP,		KC_RGHT,	_______,
 	_______,	UNDO,		CUT,		COPY,		PASTE,		REDO,						_______, 	KC_HOME,	KC_PGDN,	KC_PGUP,	KC_END,		_______,
-									_______,	_______,	_______, 	IT_COLN,	KC_DEL,		IT_SCCL
+									_______,	_______,	_______, 	CMD_SPC,	KC_DEL,		IT_SCCL
  ),
 
 [MOUR] = LAYOUT_split_3x6_3(
